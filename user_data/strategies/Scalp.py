@@ -32,8 +32,8 @@ class Scalp(IStrategy):
 
     # Order Types force "market"
     order_types = {
-        buy: 'market',
-        sell: 'market'
+        "buy": 'market',
+        "sell": 'market'
     }
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
