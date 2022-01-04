@@ -38,6 +38,14 @@ class Scalp(IStrategy):
         'stoploss_on_exchange': False
     }
 
+    bid_strategy = {
+        'price_side': 'ask'
+    }
+
+    ask_strategy = {
+        'price_side': 'bid'
+    }
+
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe['ema_high'] = ta.EMA(dataframe, timeperiod=5, price='high')
         dataframe['ema_close'] = ta.EMA(dataframe, timeperiod=5, price='close')
