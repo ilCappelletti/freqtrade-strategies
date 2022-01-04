@@ -24,11 +24,17 @@ class Scalp(IStrategy):
     # Optimal stoploss designed for the strategy
     # This attribute will be overridden if the config file contains "stoploss"
     # should not be below 3% loss
-
     stoploss = -0.04
+
     # Optimal timeframe for the strategy
     # the shorter the better
     timeframe = '1m'
+
+    # Order Types force "market"
+    order_types = {
+        buy: 'market',
+        sell: 'market'
+    }
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe['ema_high'] = ta.EMA(dataframe, timeperiod=5, price='high')
